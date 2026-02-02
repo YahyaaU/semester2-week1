@@ -11,4 +11,9 @@
 
 
 -- write your sql code here
+-- SELECT * FROM countries;
+
+-- SELECT Country, Population FROM countries ORDER BY Country DESC; 
+
+-- SELECT Country, Population FROM countries ORDER BY Population DESC LIMIT 10;
 
