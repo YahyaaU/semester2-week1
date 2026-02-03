@@ -8,3 +8,10 @@
 -- 3. Exit SQLite: .exit
 
 -- Use this file to test things out, follow allow with classwork, etc.
+-- SELECT Continent, SUM(Population) FROM countries GROUP BY Continent;
+
+-- SELECT Continent, COUNT(*) AS TotalCountries FROM countries GROUP BY Continent
+
+SELECT Continent, AVG(Population) AS 'Average Population'
+FROM
+countries GROUP BY Continent HAVING AVG(Population) > 1000000;
