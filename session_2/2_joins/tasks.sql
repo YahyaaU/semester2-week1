@@ -7,3 +7,25 @@
 -- 2. Load this script: .read tasks.sql
 -- 3. Exit SQLite: .exit
 
+-- 1. List all posts that have been deleted.
+-- SELECT content, deleted as deletedPosts FROM posts WHERE deleted = 1;
+-- 2. List all users whose usernames begin with 'a'.
+-- SELECT * FROM users WHERE username LIKE 'a%';
+-- 3. Find all posts and the usernames of those who posted them whose content contains the word "small".
+-- SELECT username, content FROM users JOIN posts ON users.id=posts.user_id WHERE content LIKE '%small%';
+-- 4. Return each non-deleted post and the username of the person who wrote in, in date order.
+-- SELECT username, content, deleted FROM users JOIN posts ON users.id=posts.user_id WHERE posts.deleted=0 ORDER BY posts.created_on DESC;
+-- 5. For each user, return their username and the total number of posts they have made.
+SELECT username, COUNT(content) FROM users JOIN posts ON users.id=posts.user_id GROUP BY users.username HAVING COUNT(content)>12;
+-- 6. Modify the previous query to return only users who have authored more than 3 posts.
+-- 7. For each user, return their username and the number of users they follow, including users who follow no one.
+-- 8. List the top 5 most-followed users.
+SELECT username, count(followed_user_id) as "Number Followed" FROM users JOIN follows ON users.id=follows.followed_user_id GROUP BY username ORDER BY "Number Followed" DESC LIMIT 5;
+-- 9. Return a list showing the username of the follower and the username of the followed user for each follow relationship.
+-- 10. For a given user (christopherprice), return all non-deleted posts written by users they follow, ordered from most recent to oldest.
+
+
+
+-- ## Diagram
+
+-- ![Database diagram of Social.](social.png)
