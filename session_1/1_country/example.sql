@@ -10,4 +10,5 @@
 -- 3. Exit SQLite: .exit
 
 --SELECT Country, Continent, GDPPerCapita FROM countries WHERE NetMigration > 10000 AND Population > 10000000;
-SELECT Country, Continent, GDPPerCapita FROM countries WHERE (NetMigration > 10000 AND Population > 10000000);
+
+SELECT Continent FROM countries WHERE Continent LIKE '%America';

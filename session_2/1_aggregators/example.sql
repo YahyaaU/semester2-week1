@@ -12,6 +12,7 @@
 
 -- SELECT Continent, COUNT(*) AS TotalCountries FROM countries GROUP BY Continent
 
-SELECT Continent, AVG(Population) AS 'Average Population'
-FROM
-countries GROUP BY Continent HAVING AVG(Population) > 1000000;
+-- SELECT Continent, AVG(Population) AS 'Average Population'
+-- FROM countries GROUP BY Continent HAVING AVG(Population) > 1000000;
+
+SELECT Continent, COUNT(*) FROM countries GROUP BY Continent;
